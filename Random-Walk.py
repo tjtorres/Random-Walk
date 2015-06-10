@@ -38,7 +38,8 @@ def database_lookup(category):
 
         engine  = sa.create_engine('mysql://root:@127.0.0.1:3306/flickr?charset=utf8')
         connection = engine.connect()
-        result = connection.execute("select lat,lon,url,scene1,sval1 from photos where scene1="+cat_numb)
+        result = connection.execute("select lat,lon,url,scene1,sval1 from photos where scene1="+cat_numb+\
+            " and  sval1>.3")
         return result
     except:
         print 'SQL Lookup Error'
