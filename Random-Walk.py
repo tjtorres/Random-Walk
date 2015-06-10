@@ -1,10 +1,7 @@
 import sys
-import json
-import redis
 import signal
 from threading import Thread
 from flask import Flask, render_template, request, abort, make_response, Response, jsonify
-from pymongo import Connection
 from bson import json_util
 from setproctitle import *
 import sqlalchemy as sa
@@ -19,7 +16,8 @@ DATABASE_NAME = 'flicker'
 TABLE_NAME = 'photos'
 
 
-cats =pd.read_csv('/Users/teej/Downloads/placesCNN/categoryIndex_places205.csv',delimiter=" ",header=0)
+#cats =pd.read_csv('/Users/teej/Downloads/placesCNN/categoryIndex_places205.csv',delimiter=" ",header=0)
+cats =pd.read_csv('/root/Caffe-Source/models/placesCNN/categoryIndex_places205.csv',delimiter=" ",header=0)
 f = lambda x: ": ".join(x.split('/')[2:])
 cats['category']= cats['category'].map(f)
 
@@ -40,7 +38,7 @@ def database_lookup(category):
 
         engine  = sa.create_engine('mysql://root:@127.0.0.1:3306/flickr?charset=utf8')
         connection = engine.connect()
-        result = connection.execute("select lat,lon,url,scene1 from photos where scene1="+cat_numb)
+        result = connection.execute("select lat,lon,url,scene1,sval1 from photos where scene1="+cat_numb)
         return result
     except:
         print 'SQL Lookup Error'
@@ -123,7 +121,7 @@ def send_out(lookup_result):
 def index():
     return render_template('index.html')
     
-@app.route('/<category>')
+@app.route('/category/<category>')
 def getpoints(category):
     db_res = database_lookup(category)
 
@@ -138,7 +136,7 @@ def getpoints(category):
 if __name__=='__main__':
     signal.signal(signal.SIGINT, signal_handler)
     #app.before_first_request(runThread)
-    app.run(threaded=True, host='0.0.0.0', port=8111,debug=True)
+    app.run(threaded=True, host='0.0.0.0', port=80,debug=True)
     
 
 

@@ -11,11 +11,11 @@
     <title>RANDOM WALK</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
@@ -55,9 +55,21 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <script src="assets/js/modernizr.js"></script>
+    <script src="{{ url_for('static', filename='js/modernizr.js') }}"></script>
 
-    <script src="assets/js/autocomplete.js"></script>
+    <script src="{{ url_for('static', filename='js/autocomplete.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/leaflet-heat.js') }}"></script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63945205-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
 
 
    <style>
@@ -75,6 +87,7 @@
       
       .leaflet-popup-content {
       width:auto !important;
+
       
       }
       
@@ -135,8 +148,9 @@
 
    			<div class="row centered">
    				<div class="ui-widget">
-					<label for="categories">Scenery: </label>
-					<input id="categories">
+					<form id="type">Scenery: 
+					<input type="text" id="categories">
+					</form>
 
 				</div>
 			</div>
@@ -422,19 +436,19 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/retina-1.1.0.js"></script>
-	<script src="assets/js/jquery.hoverdir.js"></script>
-	<script src="assets/js/jquery.hoverex.min.js"></script>
-	<script src="assets/js/jquery.prettyPhoto.js"></script>
-  	<script src="assets/js/jquery.isotope.min.js"></script>
-  	<script src="assets/js/custom.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/retina-1.1.0.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.hoverdir.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.hoverx.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.prettyphoto.js') }}"></script>
+  	<script src="{{ url_for('static', filename='js/jquery.isotope.min.js') }}"></script>
+  	<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
 
    <!--AUTO COMPLETE STUFF-->
    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>-->
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <!--<link rel="stylesheet" href="/resources/demos/style.css">-->
 <!--                   -->
 
     <script>
@@ -533,10 +547,7 @@
           attribution: 'Map data (c) <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
       });
 
-      var baseLayer = {
-        "Base Layer": base_tile
-      };
-
+      
       /*
       addition of the wms layers
       */
@@ -551,9 +562,7 @@
       /*
       list of layers to be added
       */
-      var layer_list = {
       
-      };
 
       /*
       Bounding box.
@@ -565,6 +574,12 @@
       /*
       Creates the map and adds the selected layers
       */
+      
+
+
+
+  
+
       var map = L.map('folium_7bc794bc66c440279ca6134ee64ec228', {
                                        center:[37.863372, -122.156245],
                                        zoom: 7,
@@ -572,27 +587,83 @@
                                        layers: [base_tile]
                                      });
 
+      var baseLayer = {
+        "Base Layer": base_tile
+      };
+
+
+      var layer_list = {
+      
+      };
+
       L.control.layers(baseLayer, layer_list).addTo(map);
+      //L.control.layers(heatmapLayer, layer_list).addTo(map);
 
       //cluster group
       var clusteredmarkers = L.markerClusterGroup();
       //section for adding clustered markers
       
       //add the clustered markers to the group anyway
-      map.addLayer(clusteredmarkers);
 
-      
+      map.addLayer(clusteredmarkers);
+      /*
       var marker_1_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
       var marker_1 = L.marker([32.796149, 
-							-117.25974],
-							{'icon':marker_1_icon}
-							);
+              -117.25974],
+              {'icon':marker_1_icon}
+              );
       marker_1.bindPopup("<a><img src=http://farm4.staticflickr.com/3096/2848868873_0187db5fd6.jpg></img><BR>ocean</a>");
       marker_1._popup.options.maxWidth = 300;
       map.addLayer(marker_1)
+      */
       
-   </script>
+   
 
+      var plotlayers=[];
+
+   		$("#type").submit(function(event){
+        event.preventDefault();
+        var query = $("#categories").val();
+   			$.get('/category/'+ query, function(jd) {
+
+          removeMarkers();
+
+          //var arr = $.map(jd, function(el) { return el; });
+          /*var heat = L.heatLayer(arr,{
+            radius: 20,
+            blur: 15, 
+            maxZoom: 17,
+        }).addTo(map);
+*/
+          var j=0;
+          for (i=0; i<jd.points.length; i++){
+            var point = jd.points[i];
+            var divNode = document.createElement('DIV');
+            divNode.innerHTML = "<a href="+point.url+ " target='_blank'><img src="+ point.url+" width=300 height=70%></img></a><BR>"+point.scene1+"<BR>"+point.sval1;
+            if (point.sval1>.1){
+            plotlayers[j] = L.marker([point.lat,point.lon]).bindPopup(divNode).addTo(map);
+            j++;
+          }
+            
+          }        
+
+        });
+   		
+   		});
+
+
+      function removeMarkers() {
+        for (i=0;i<plotlayers.length;i++) {
+          map.removeLayer(plotlayers[i]);
+        }
+        plotlayers=[];
+      };
+
+      
+
+
+
+   </script>
 
    
 
