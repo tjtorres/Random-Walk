@@ -1,0 +1,153 @@
+.ui-autocomplete { position: absolute; cursor: default;z-index:30 !important;}  
+
+      
+      
+      .leaflet-popup-content {
+      width:auto !important;
+
+      
+      }
+
+      /* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+
+
+
+
+
+      /* When the body has the loading class, we turn
+     the scrollbar off with overflow:hidden */
+      body.loading {
+          overflow: hidden;   
+      }
+
+      /* Anytime the body has the loading class, our
+         modal element will be visible */
+      body.loading .modal {
+          display: block;
+      }
+        .modal {
+          display:    none;
+          position:   fixed;
+          z-index:    1000;
+          top:        0;
+          left:       0;
+          height:     100%;
+          width:      100%;
+          background: rgba( 255, 255, 255, 0.0 ) 
+                      url("images/ajax-loader-2.gif") 
+                      50% 50% 
+                      no-repeat;
+          }
+
+
+
+.tiwtter-typeahead,
+.tt-input,
+.tt-hint {
+  width: 396px;
+  height: 30px;
+  padding: 8px 12px;
+  font-size: 24px;
+  line-height: 30px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  outline: none;
+}
+
+.twitter-typeahead {
+  background-color: #fff;
+}
+
+.twitter-typeahead:focus {
+  border: 2px solid #0097cf;
+}
+
+.tt-input {
+  width: 50%;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-menu {
+  width: 322px;
+  margin: 12px 0;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #0097cf;
+}
+
+
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+/* example specific styles */
+/* ----------------------- */
+
+#custom-templates .empty-message {
+  padding: 5px 10px;
+ text-align: center;
+}
+
+#multiple-datasets .league-name {
+  margin: 0 20px 5px 20px;
+  padding: 3px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+#dropdown .tt-menu {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+#dropdown {
+    top: 5px;
+    left: 200px;
+    /*width:400px;
+    height:10px;
+    margin-top: 10px; 
+    margin-left: -200px; 
+    border: 1px transparent;
+    background-color: transparent;*/
+}
+
+#rtl-support .tt-menu {
+  text-align: right;
+}

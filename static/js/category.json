@@ -1,0 +1,890 @@
+{
+    "name":"category",
+    "children": [{
+        "name":"indoor",
+        "_children": [{
+            "name":"shopping and dining",
+            "_children": [{
+            "name":"bakery: shop",
+            "size":2844
+        }, {
+            "name":"banquet_hall",
+            "size":328
+        }, {
+            "name":"bar",
+            "size":8258
+        }, {
+            "name":"beauty_salon",
+            "size":1395
+        }, {
+            "name":"bookstore",
+            "size":1887
+        }, {
+            "name":"butchers_shop",
+            "size":611
+        }, {
+            "name":"cafeteria",
+            "size":84
+        }, {
+            "name":"candy_store",
+            "size":610
+        }, {
+            "name":"clothing_store",
+            "size":2257
+        }, {
+            "name":"coffee_shop",
+            "size":2490
+        }, {
+            "name":"food_court",
+            "size":274
+        }, {
+            "name":"gift_shop",
+            "size":528
+        }, {
+            "name":"ice_cream_parlor",
+            "size":724
+        }, {
+            "name":"restaurant",
+            "size":2664
+        }, {
+            "name":"restaurant_kitchen",
+            "size":375
+        }, {
+            "name":"shoe_shop",
+            "size":461
+        }, {
+            "name":"supermarket",
+            "size":1023
+                }]
+            },{
+            "name":"workplace (office building, factory, lab, etc.)",
+            "_children": [{
+            "name":"assembly_line",
+            "size":419
+        }, {
+            "name":"conference_room",
+            "size":162
+        }, {
+            "name":"corridor",
+            "size":842
+        }, {
+            "name":"engine_room",
+            "size":1136
+        }, {
+            "name":"hospital_room",
+            "size":1269
+        }, {
+            "name":"laundromat",
+            "size":347
+        }, {
+            "name":"lobby",
+            "size":776
+        }, {
+            "name":"office",
+            "size":1667
+        }, {
+            "name":"reception",
+            "size":198
+        }, {
+            "name":"staircase",
+            "size":1819
+        }, {
+            "name":"waiting_room",
+            "size":97
+            }]
+        },{
+            "name":"home or hotel",
+            "_children": [{
+            "name":"attic",
+            "size":481
+        }, {
+            "name":"basement",
+            "size":1457
+        }, {
+            "name":"bedroom",
+            "size":861
+        }, {
+            "name":"closet",
+            "size":379
+        }, {
+            "name":"dinette: home",
+            "size":5
+        }, {
+            "name":"dining_room",
+            "size":361
+        }, {
+            "name":"dorm_room",
+            "size":237
+        }, {
+            "name":"game_room",
+            "size":469
+        }, {
+            "name":"home_office",
+            "size":329
+        }, {
+            "name":"hotel_room",
+            "size":436
+        }, {
+            "name":"kitchen",
+            "size":287
+        }, {
+            "name":"kitchenette",
+            "size":100
+        }, {
+            "name":"laundromat",
+            "size":347
+        }, {
+            "name":"living_room",
+            "size":504
+        }, {
+            "name":"nursery",
+            "size":339
+        }, {
+            "name":"pantry",
+            "size":149
+        }, {
+            "name":"parlor",
+            "size":199
+        }, {
+            "name":"restaurant_kitchen",
+            "size":375
+        }, {
+            "name":"shower",
+            "size":2897
+        }, {
+            "name":"staircase",
+            "size":1819
+                }]
+        }, {
+            "name":"transportation (vehicle interiors, stations, etc.)",
+            "_children": [{
+            "name":"airport_terminal",
+            "size":1683
+        }, {
+            "name":"bus_interior",
+            "size":253
+        }, {
+            "name":"cockpit",
+            "size":809
+        }, {
+            "name":"engine_room",
+            "size":1136
+        }, {
+            "name":"galley",
+            "size":77
+        }, {
+            "name":"subway_station: platform",
+            "size":376
+        }, {
+            "name":"train_station: platform",
+            "size":1636
+                    }]
+            }, {
+            "name":"sports and leisure",
+            "_children": [{
+            "name":"ballroom",
+            "size":2518
+        }, {
+            "name":"bowling_alley",
+            "size":374
+        }, {
+            "name":"boxing_ring",
+            "size":497
+        }, {
+            "name":"locker_room",
+            "size":1039
+        }, {
+            "name":"martial_arts_gym",
+            "size":1187
+                    }]
+
+            }, {
+            "name":"cultural (art, education, religion, etc.)",
+            "_children": [{
+            "name":"aquarium",
+            "size":5630
+        }, {
+            "name":"art_gallery",
+            "size":4565
+        }, {
+            "name":"art_studio",
+            "size":3162
+        }, {
+            "name":"auditorium",
+            "size":2290
+        }, {
+            "name":"beauty_salon",
+            "size":1395
+        }, {
+            "name":"classroom",
+            "size":1845
+        }, {
+            "name":"conference_center",
+            "size":3015
+        }, {
+            "name":"jail_cell",
+            "size":1005
+        }, {
+            "name":"kindergarden_classroom",
+            "size":637
+        }, {
+            "name":"museum: indoor",
+            "size":1516
+        }, {
+            "name":"music_studio",
+            "size":8622
+        }, {
+            "name":"pulpit",
+            "size":1330
+        }, {
+            "name":"stage: indoor",
+            "size":4498
+        }, {
+            "name":"television_studio",
+            "size":322
+                    }]
+            }]
+        },{
+        "name":"outdoor, natural",
+        "_children":[{
+            "name":"water, ice, snow",
+            "_children": [{
+            "name":"bayou",
+            "size":1337
+        }, {
+            "name":"boardwalk",
+            "size":1433
+        }, {
+            "name":"coast",
+            "size":2037
+        }, {
+            "name":"creek",
+            "size":1565
+        }, {
+            "name":"crevasse",
+            "size":169
+        }, {
+            "name":"dam",
+            "size":964
+        }, {
+            "name":"dock",
+            "size":1954
+        }, {
+            "name":"hot_spring",
+            "size":909
+        }, {
+            "name":"iceberg",
+            "size":512
+        }, {
+            "name":"igloo",
+            "size":271
+        }, {
+            "name":"islet",
+            "size":827
+        }, {
+            "name":"marsh",
+            "size":1645
+        }, {
+            "name":"mountain_snowy",
+            "size":1456
+        }, {
+            "name":"ocean",
+            "size":3324
+        }, {
+            "name":"pond",
+            "size":2220
+        }, {
+            "name":"raft",
+            "size":994
+        }, {
+            "name":"river",
+            "size":1222
+        }, {
+            "name":"sandbar",
+            "size":711
+        }, {
+            "name":"sea_cliff",
+            "size":1887
+        }, {
+            "name":"ski_slope",
+            "size":860
+        }, {
+            "name":"snowfield",
+            "size":187
+        }, {
+            "name":"swamp",
+            "size":2270
+        }, {
+            "name":"underwater: coral_reef",
+            "size":2215
+        }, {
+            "name":"watering_hole",
+            "size":457
+                    }]
+            }, {
+            "name":"mountains, hills, desert, sky",
+            "_children": [{
+            "name":"badlands",
+            "size":708
+        }, {
+            "name":"butte",
+            "size":769
+        }, {
+            "name":"canyon",
+            "size":1489
+        }, {
+            "name":"desert: sand",
+            "size":2154
+        }, {
+            "name":"desert: vegetation",
+            "size":483
+        }, {
+            "name":"mountain",
+            "size":2640
+        }, {
+            "name":"mountain_snowy",
+            "size":1456
+        }, {
+            "name":"rock_arch",
+            "size":380
+        }, {
+            "name":"sky",
+            "size":6246
+        }, {
+            "name":"valley",
+            "size":1838
+        }, {
+            "name":"volcano",
+            "size":1741
+                    }]
+            }, {
+            "name":"forest, field, jungle",
+            "_children": [{
+            "name":"bamboo_forest",
+            "size":380
+        }, {
+            "name":"bayou",
+            "size":1337
+        }, {
+            "name":"boardwalk",
+            "size":1433
+        }, {
+            "name":"botanical_garden",
+            "size":5536
+        }, {
+            "name":"corn_field",
+            "size":1257
+        }, {
+            "name":"cottage_garden",
+            "size":1079
+        }, {
+            "name":"fairway",
+            "size":359
+        }, {
+            "name":"field: cultivated",
+            "size":267
+        }, {
+            "name":"field: wild",
+            "size":2745
+        }, {
+            "name":"forest_path",
+            "size":1630
+        }, {
+            "name":"forest_road",
+            "size":1963
+        }, {
+            "name":"formal_garden",
+            "size":671
+        }, {
+            "name":"golf_course",
+            "size":997
+        }, {
+            "name":"herb_garden",
+            "size":1017
+        }, {
+            "name":"marsh",
+            "size":1645
+        }, {
+            "name":"orchard",
+            "size":2821
+        }, {
+            "name":"pasture",
+            "size":2246
+        }, {
+            "name":"picnic_area",
+            "size":428
+        }, {
+            "name":"playground",
+            "size":4600
+        }, {
+            "name":"rainforest",
+            "size":4275
+        }, {
+            "name":"rice_paddy",
+            "size":1221
+        }, {
+            "name":"swamp",
+            "size":2270
+        }, {
+            "name":"topiary_garden",
+            "size":380
+        }, {
+            "name":"tree_farm",
+            "size":633
+        }, {
+            "name":"vegetable_garden",
+            "size":1193
+        }, {
+            "name":"wheat_field",
+            "size":910
+        }, {
+            "name":"wind_farm",
+            "size":441
+        }, {
+            "name":"yard",
+            "size":1354
+                    }]
+            }, {
+            "name":"man-made elements",
+            "_children": [{
+            "name":"aqueduct",
+            "size":228
+        }, {
+            "name":"bayou",
+            "size":1337
+        }, {
+            "name":"boardwalk",
+            "size":1433
+        }, {
+            "name":"botanical_garden",
+            "size":5536
+        }, {
+            "name":"cottage_garden",
+            "size":1079
+        }, {
+            "name":"dam",
+            "size":964
+        }, {
+            "name":"dock",
+            "size":1954
+        }, {
+            "name":"fairway",
+            "size":359
+        }, {
+            "name":"field: cultivated",
+            "size":267
+        }, {
+            "name":"forest_road",
+            "size":1963
+        }, {
+            "name":"formal_garden",
+            "size":671
+        }, {
+            "name":"golf_course",
+            "size":997
+        }, {
+            "name":"herb_garden",
+            "size":1017
+        }, {
+            "name":"highway",
+            "size":2671
+        }, {
+            "name":"igloo",
+            "size":271
+        }, {
+            "name":"picnic_area",
+            "size":428
+        }, {
+            "name":"playground",
+            "size":4600
+        }, {
+            "name":"raft",
+            "size":994
+        }, {
+            "name":"rice_paddy",
+            "size":1221
+        }, {
+            "name":"rope_bridge",
+            "size":341
+        }, {
+            "name":"ruin",
+            "size":2038
+        }, {
+            "name":"ski_slope",
+            "size":860
+        }, {
+            "name":"topiary_garden",
+            "size":380
+        }, {
+            "name":"trench",
+            "size":651
+        }, {
+            "name":"vegetable_garden",
+            "size":1193
+        }, {
+            "name":"viaduct",
+            "size":718
+        }, {
+            "name":"wind_farm",
+            "size":441
+        }, {
+            "name":"yard",
+            "size":1354
+                    }]
+            }]
+       },{
+        "name":"outdoor, man-made",
+        "_children":[{
+            "name":"transportation (roads, parking, bridges, boats, airports, etc.)",
+            "_children": [{
+            "name":"bayou",
+            "size":1337
+        }, {
+            "name":"boat_deck",
+            "size":1855
+        }, {
+            "name":"bridge",
+            "size":1998
+        }, {
+            "name":"crosswalk",
+            "size":3097
+        }, {
+            "name":"dock",
+            "size":1954
+        }, {
+            "name":"forest_road",
+            "size":1963
+        }, {
+            "name":"gas_station",
+            "size":1676
+        }, {
+            "name":"harbor",
+            "size":3571
+        }, {
+            "name":"highway",
+            "size":2671
+        }, {
+            "name":"parking_lot",
+            "size":4239
+        }, {
+            "name":"railroad_track",
+            "size":1328
+        }, {
+            "name":"runway",
+            "size":2161
+        }, {
+            "name":"train_railway",
+            "size":1163
+                }]
+
+            }, {
+            "name":"cultural or historical building/place",
+            "_children": [{
+            "name":"abbey",
+            "size":1102
+        }, {
+            "name":"amphitheater",
+            "size":474
+        }, {
+            "name":"aqueduct",
+            "size":228
+        }, {
+            "name":"arch",
+            "size":1823
+        }, {
+            "name":"basilica",
+            "size":2449
+        }, {
+            "name":"castle",
+            "size":1832
+        }, {
+            "name":"cathedral: outdoor",
+            "size":170
+        }, {
+            "name":"cemetery",
+            "size":4243
+        }, {
+            "name":"church: outdoor",
+            "size":284
+        }, {
+            "name":"courthouse",
+            "size":425
+        }, {
+            "name":"courtyard",
+            "size":1367
+        }, {
+            "name":"fountain",
+            "size":3350
+        }, {
+            "name":"kasbah",
+            "size":420
+        }, {
+            "name":"lighthouse",
+            "size":943
+        }, {
+            "name":"mausoleum",
+            "size":1563
+        }, {
+            "name":"medina",
+            "size":945
+        }, {
+            "name":"monastery: outdoor",
+            "size":102
+        }, {
+            "name":"pagoda",
+            "size":762
+        }, {
+            "name":"palace",
+            "size":1725
+        }, {
+            "name":"plaza",
+            "size":5764
+        }, {
+            "name":"ruin",
+            "size":2038
+        }, {
+            "name":"temple: east_asia",
+            "size":704
+        }, {
+            "name":"temple: south_asia",
+            "size":792
+        }, {
+            "name":"tower",
+            "size":1861
+        }, {
+            "name":"viaduct",
+            "size":718
+        }, {
+            "name":"windmill",
+            "size":756
+                    }]
+            }, {
+            "name":"sports fields, parks, leisure spaces",
+            "_children": [{
+            "name":"amusement_park",
+            "size":4917
+        }, {
+            "name":"baseball_field",
+            "size":1270
+        }, {
+            "name":"boardwalk",
+            "size":1433
+        }, {
+            "name":"campsite",
+            "size":1809
+        }, {
+            "name":"fairway",
+            "size":359
+        }, {
+            "name":"forest_road",
+            "size":1963
+        }, {
+            "name":"golf_course",
+            "size":997
+        }, {
+            "name":"ice_skating_rink: outdoor",
+            "size":881
+        }, {
+            "name":"igloo",
+            "size":271
+        }, {
+            "name":"pavilion",
+            "size":632
+        }, {
+            "name":"picnic_area",
+            "size":428
+        }, {
+            "name":"playground",
+            "size":4600
+        }, {
+            "name":"racecourse",
+            "size":2009
+        }, {
+            "name":"rope_bridge",
+            "size":341
+        }, {
+            "name":"ski_slope",
+            "size":860
+        }, {
+            "name":"stadium: baseball",
+            "size":1091
+        }, {
+            "name":"stadium: football",
+            "size":4298
+        }, {
+            "name":"swimming_pool: outdoor",
+            "size":403
+        }, {
+            "name":"track: outdoor",
+            "size":958
+                    }]
+            }, {
+            "name":"industrial and construction",
+            "_children": [{
+            "name":"construction_site",
+            "size":2255
+        }, {
+            "name":"dam",
+            "size":964
+        }, {
+            "name":"excavation",
+            "size":395
+        }, {
+            "name":"garbage_dump",
+            "size":612
+        }, {
+            "name":"trench",
+            "size":651
+        }, {
+            "name":"water_tower",
+            "size":989
+        }, {
+            "name":"wind_farm",
+            "size":441
+        }, {
+            "name":"windmill",
+            "size":756
+                    }]
+            }, {
+            "name":"houses, cabins, gardens, and farms",
+            "_children": [{
+            "name":"botanical_garden",
+            "size":5536
+        }, {
+            "name":"chalet",
+            "size":691
+        }, {
+            "name":"cottage_garden",
+            "size":1079
+        }, {
+            "name":"courtyard",
+            "size":1367
+        }, {
+            "name":"doorway: outdoor",
+            "size":306
+        }, {
+            "name":"driveway",
+            "size":1341
+        }, {
+            "name":"field: cultivated",
+            "size":267
+        }, {
+            "name":"formal_garden",
+            "size":671
+        }, {
+            "name":"herb_garden",
+            "size":1017
+        }, {
+            "name":"mansion",
+            "size":1272
+        }, {
+            "name":"patio",
+            "size":507
+        }, {
+            "name":"residential_neighborhood",
+            "size":712
+        }, {
+            "name":"rice_paddy",
+            "size":1221
+        }, {
+            "name":"shed",
+            "size":1026
+        }, {
+            "name":"ski_resort",
+            "size":827
+        }, {
+            "name":"topiary_garden",
+            "size":380
+        }, {
+            "name":"vegetable_garden",
+            "size":1193
+        }, {
+            "name":"veranda",
+            "size":528
+        }, {
+            "name":"yard",
+            "size":1354
+                    }]
+            }, {
+            "name":"commercial buildings, shops, markets, cities, and towns",
+            "_children": [{
+            "name":"alley",
+            "size":2709
+        }, {
+            "name":"apartment_building: outdoor",
+            "size":134
+        }, {
+            "name":"building_facade",
+            "size":2143
+        }, {
+            "name":"courtyard",
+            "size":1367
+        }, {
+            "name":"crosswalk",
+            "size":3097
+        }, {
+            "name":"doorway: outdoor",
+            "size":306
+        }, {
+            "name":"fire_escape",
+            "size":1797
+        }, {
+            "name":"fire_station",
+            "size":1673
+        }, {
+            "name":"gas_station",
+            "size":1676
+        }, {
+            "name":"hospital",
+            "size":2036
+        }, {
+            "name":"hotel: outdoor",
+            "size":93
+        }, {
+            "name":"inn: outdoor",
+            "size":203
+        }, {
+            "name":"market: outdoor",
+            "size":2845
+        }, {
+            "name":"medina",
+            "size":945
+        }, {
+            "name":"motel",
+            "size":1565
+        }, {
+            "name":"office_building",
+            "size":1300
+        }, {
+            "name":"phone_booth",
+            "size":1486
+        }, {
+            "name":"plaza",
+            "size":5764
+        }, {
+            "name":"residential_neighborhood",
+            "size":712
+        }, {
+            "name":"restaurant_patio",
+            "size":561
+        }, {
+            "name":"schoolhouse",
+            "size":371
+        }, {
+            "name":"shopfront",
+            "size":1398
+        }, {
+            "name":"skyscraper",
+            "size":4031
+        }, {
+            "name":"slum",
+            "size":3998
+        }, {
+            "name":"windmill",
+            "size":756
+
+            }]
+        }]
+
+}]
+}
