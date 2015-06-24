@@ -1,720 +1,440 @@
 <!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>Random Walk </title>
+		<meta name="description" content="A tool for finding your next adventure.">
+		<meta name="author" content="TJ Torres">
 
-    <title>RANDOM WALK</title>
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico')}}">
 
-    <!-- Custom styles for this template -->
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+		<!-- Web Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
 
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
-   <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+		<!-- Bootstrap core CSS -->
+		<link href="{{ url_for('static', filename='css/typeahead.css')}}" rel="stylesheet">
 
+		<link href="{{ url_for('static', filename='bootstrap/css/bootstrap.css')}}" rel="stylesheet">
+		
 
+		<!-- Font Awesome CSS -->
+		<link href="{{ url_for('static', filename='fonts/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Plugins -->
+		<link href="{{ url_for('static', filename='css/animations.css')}}" rel="stylesheet">
 
+		<!-- Worthy core CSS file -->
+		<link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
 
+		<!-- Custom css --> 
+		<link href="{{ url_for('static', filename='css/custom.css')}}" rel="stylesheet">
 
-   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-   <link rel="stylesheet" href="//rawgit.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.css">
-   <script src="//rawgithub.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.js"></script>
-
-
-   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css">
-   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css">
-   <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
-   <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
-
-   <link rel="stylesheet" href="//birdage.github.io/Leaflet.awesome-markers/dist/leaflet.awesome.rotate.css">
+		<!-- Tree css --> 
+		<link href="{{ url_for('static', filename='css/tree.css')}}" rel="stylesheet">
 
 
+		<!-- Leaflet css --> 
 
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <script src="{{ url_for('static', filename='js/modernizr.js') }}"></script>
-
-    <script src="{{ url_for('static', filename='js/autocomplete.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/leaflet-heat.js') }}"></script>
-
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-63945205-1', 'auto');
-  ga('send', 'pageview');
-
-  </script>
+		<link href="{{ url_for('static', filename='css/leaflet.css')}}" rel="stylesheet">
+		<link rel="stylesheet" href="//rawgit.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.css">
 
 
-   <style>
+		<!-- Marker Cluster css --> 
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css">
 
-      
+   		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css">
 
-      #map {
-        position:absolute;
-        top:100;
-        bottom:0;
-        right:0;
-        left:0;
-        width: 100%;
-      }
-      
-      .leaflet-popup-content {
-      width:auto !important;
-
-      
-      }
-
-      /* Start by setting display:none to make this hidden.
-   Then we position it in relation to the viewport window
-   with position:fixed. Width, height, top and left speak
-   for themselves. Background we set to 80% white with
-   our animation centered, and no-repeating */
-.modal {
-    display:    none;
-    position:   fixed;
-    z-index:    1000;
-    top:        0;
-    left:       0;
-    height:     100%;
-    width:      100%;
-    background: rgba( 255, 255, 255, 0.0 ) 
-                url("{{ url_for('static', filename='img/ajax-loader-2.gif') }}") 
-                50% 50% 
-                no-repeat;
-}
-
-/* When the body has the loading class, we turn
-   the scrollbar off with overflow:hidden */
-body.loading {
-    overflow: hidden;   
-}
-
-/* Anytime the body has the loading class, our
-   modal element will be visible */
-body.loading .modal {
-    display: block;
-}
-      
-
-   </style>
+   		<!-- justified gallery -->
 
 
-   
+   		<!--<link href="{{ url_for('static', filename='css/justifiedGallery.min.css')}}" rel="stylesheet">-->
 
-  </head>
+   		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  <body>
+		  ga('create', 'UA-63945205-1', 'auto');
+		  ga('send', 'pageview');
 
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">RANDOM WALK</a>
-        </div>
-        <div class="navbar-collapse collapse navbar-right">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="blog.html">BLOG</a></li>
-                <li><a href="single-post.html">SINGLE POST</a></li>
-                <li><a href="portfolio.html">PORTFOLIO</a></li>
-                <li><a href="single-project.html">SINGLE PROJECT</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+		</script>
 
-	<!-- *****************************************************************************************************************
-	 HEADERWRAP
-	 ***************************************************************************************************************** -->
-	<div id="headerwrap">
-	    <div class="container">
-	    	<div class="row">
-	    		<div class="folium-map" id="folium_7bc794bc66c440279ca6134ee64ec228" style="width: 100%; height: 600px;">
-	    			
-	    		</div>
 
-   			
 
-   			</div>
+	</head>
 
-   			<div class="row centered">
-   				<div class="ui-widget">
-					<form id="type">Scenery: 
-					<input type="text" id="categories">
-					</form>
+	<body class="no-trans">
+		<!-- scrollToTop -->
+		<!-- ================ -->
+		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
 
+		<!-- header start -->
+		<!-- ================ --> 
+		<header class="header fixed clearfix navbar navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+
+						<!-- header-left start -->
+						<!-- ================ -->
+						<div class="header-left clearfix">
+
+							<!-- logo -->
+							<div class="logo smooth-scroll">
+								<a href="#banner"><img id="logo" src="static/images/Random_line_32.png" alt="Random Walk"></a>
+							</div>
+
+							<!-- name-and-slogan -->
+							<div class="site-name-and-slogan smooth-scroll">
+								<div class="site-name"><a href="#banner">Random Walk</a></div>
+								<div class="site-slogan">A simple tool to find adventure.</div>
+								<div class="site-name">
+								<form class="form-horizontal" >
+									        <div class="input-group-sm" id="dropdown">
+									        
+									          
+									          <input type="text" class="form-control" class="twitter-typeahead" data-provide="typeahead" placeholder="Scenery Search"  id="srch-term">
+									      
+									        </div>
+									    </form>
+									    </div>
+							</div>
+
+						</div>
+						<!-- header-left end -->
+
+					</div>
+					<div class="col-md-8">
+
+						<!-- header-right start -->
+						<!-- ================ -->
+						<div class="header-right clearfix">
+
+							<!-- main-navigation start -->
+							<!-- ================ -->
+							<div class="main-navigation animated">
+
+								<!-- navbar start -->
+								<!-- ================ -->
+								<nav class="navbar navbar-default" role="navigation">
+									<div class="container-fluid">
+
+
+										<!-- Toggle get grouped for better mobile display -->
+										<div class="navbar-header">
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+												<span class="sr-only">Toggle navigation</span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+											</button>
+										</div>
+
+										<!-- Collect the nav links, forms, and other content for toggling -->
+										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
+										
+											<ul class="nav navbar-nav navbar-right">
+
+												<li class="active"><a href="#map">Map</a></li>
+												<li><a href="#portfolio">Photos</a></li>
+												<li><a href="#network">Network</a></li>
+												<li><a href="#about">About</a></li>
+												<li><a href="#contact">Me</a></li>
+												<li><a href="http://slides.com/tjtorres/random-walk/live" target="_blank">Slides</a></li>
+											</ul>
+										</div>
+
+									</div>
+								</nav>
+								<!-- navbar end -->
+
+							</div>
+							<!-- main-navigation end -->
+
+						</div>
+						<!-- header-right end -->
+
+					</div>
 				</div>
 			</div>
-	    <!--
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<h3>Show your work with this beautiful theme</h3>
-					<h1>Eyecatching Bootstrap 3 Theme.</h1>
-					<h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h5>
-					<h5>More Lorem Ipsum added here too.</h5>				
+		</header>
+		<!-- header end -->
+
+		<!-- banner start -->
+		<!-- ================ -->
+		<div class="banner">
+			<div class="folium-map" id="map" style="width: 100%;height: 550px; " >
+			
+			</div>
+		</div>
+		
+		
+		<!-- banner end -->
+
+		<!-- section start -->
+		<!-- ================ -->
+	<div class=" translucent-bg  pb-clear">
+		<div class="section bg-image-2 " >
+			<div class="container">
+				<h1 class="text-center title" id="portfolio">Recent Photos</h1>
+				<div class="separator"></div>
+				<p class="lead text-center">Discover some of the latest pictures from Flickr.</BR> Mouseover photos to see their scenery category. </BR>Click on scenes you like to discover others like them on the map. </p>
+				<br>			
+				<div class="row object-non-visible" data-animation-effect="fadeIn" >
+					<div class="col-md-12" id="port">
+
+						
+
+						
+						<!-- portfolio items end -->
+					
+					</div>
 				</div>
-				<div class="col-lg-8 col-lg-offset-2 himg">
-					<img src="assets/img/browser.png" class="img-responsive">
+			</div>
+		</div>
+	</div>
+		<!-- section end -->
+
+
+		<!-- section start -->
+		<!-- ================ -->
+		
+		<div class="section " >
+			<div  id="network">
+				
+						<h1 class="text-center">Heirarchy Network Tree</h1>
+						<p class="lead text-center"> 
+						This graphic shows the heirarchical structure of the different scenery categories available. </BR>Search through it to find the right type of scenery you want. </p>
+
+						<p class="lead text-center"></BR>The size of the final categorization represents the frequency of occurance of that type of scenery. </BR>Pan and zoom around the network tree. </BR>Click on the blue shaded nodes to see the sub-categories. </BR>Click on the orange nodes to search for that category on the map. 
+						</BR>
+						</p>
+						<div class="separator"></div>
+						<div id="tree-container"></div>
+					</div>
 				</div>
-			</div>--><!-- /row --> 
-	    </div> <!-- /container -->
-
-	    	</div>
-	</div><!-- /headerwrap -->
-
-	<!-- *****************************************************************************************************************
-	 SERVICE LOGOS
-	 ***************************************************************************************************************** -->
-
-	 
-	 <div id="service">
-	 	<div class="container">
- 			<div class="row centered">
- 				<div class="col-md-4">
- 					<i class="fa fa-heart-o"></i>
- 					<h4>Handsomely Crafted</h4>
- 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
- 					<p><br/><a href="#" class="btn btn-theme">More Info</a></p>
- 				</div>
- 				<div class="col-md-4">
- 					<i class="fa fa-flask"></i>
- 					<h4>Retina Ready</h4>
- 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
- 					<p><br/><a href="#" class="btn btn-theme">More Info</a></p>
- 				</div>
- 				<div class="col-md-4">
- 					<i class="fa fa-trophy"></i>
- 					<h4>Quality Theme</h4>
- 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
- 					<p><br/><a href="#" class="btn btn-theme">More Info</a></p>
- 				</div>		 				
-	 		</div>
-	 	</div><! --/container -->
-	 </div>  <! --/service -->
-	 
-	<!-- *****************************************************************************************************************
-	 PORTFOLIO SECTION
-	 ***************************************************************************************************************** -->
-	 <div id="portfoliowrap">
-        <h3>LATEST WORKS</h3>
-
-        <div class="portfolio-centered">
-            <div class="recentitems portfolio">
-				<div class="portfolio-item graphic-design">
-					<div class="he-wrap tpl6">
-					<img src="assets/img/portfolio/portfolio_09.jpg" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_09.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                            
-                <div class="portfolio-item web-design">
-                    <div class="he-wrap tpl6">
-					<img src="assets/img/portfolio/portfolio_02.jpg" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Web Design Item</h3>
-                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_02.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-        
-                <div class="portfolio-item graphic-design">
-                    <div class="he-wrap tpl6">
-					<img src="assets/img/portfolio/portfolio_03.jpg" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_03.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-        
-                <div class="portfolio-item graphic-design">
-                    <div class="he-wrap tpl6">
-					<img src="assets/img/portfolio/portfolio_04.jpg" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_04.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                                        
-                <div class="portfolio-item books">
-                    <div class="he-wrap tpl6">
-					<img src="assets/img/portfolio/portfolio_05.jpg" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
-                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_05.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                                        
-                <div class="portfolio-item graphic-design">
-                    <div class="he-wrap tpl6">
-					<img src="assets/img/portfolio/portfolio_06.jpg" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_06.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                    
-                <div class="portfolio-item books">
-                    <div class="he-wrap tpl6">
-					<img src="assets/img/portfolio/portfolio_07.jpg" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
-                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_07.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                    
-                <div class="portfolio-item graphic-design">
-                    <div class="he-wrap tpl6">
-					<img src="assets/img/portfolio/portfolio_08.jpg" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_08.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                                        
-                <div class="portfolio-item web-design">
-                    <div class="he-wrap tpl6">
-					<img src="assets/img/portfolio/portfolio_01.jpg" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Web Design Item</h3>
-                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_01.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-    
-			<div class="portfolio-item books">
-                <div class="he-wrap tpl6">
-					<img src="assets/img/portfolio/portfolio_10.jpg" alt="">
-						<div class="he-view">
-							<div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
-                                <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_10.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
-                                <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
-                        	</div><!-- he bg -->
-						</div><!-- he view -->		
-					</div><!-- he wrap -->
-				</div><!-- end col-12 -->
-                    
-            </div><!-- portfolio -->
-        </div><!-- portfolio container -->
-	 </div><!--/Portfoliowrap -->
-	 
-	 
-	<!-- *****************************************************************************************************************
-	 MIDDLE CONTENT
-	 ***************************************************************************************************************** -->
-
-	 <div class="container mtb">
-	 	<div class="row">
-	 		<div class="col-lg-4 col-lg-offset-1">
-		 		<h4>More About Our Agency.</h4>
-		 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
- 				<p><br/><a href="about.html" class="btn btn-theme">More Info</a></p>
-	 		</div>
-	 		
-	 		<div class="col-lg-3">
-	 			<h4>Frequently Asked</h4>
-	 			<div class="hline"></div>
-	 			<p><a href="#">How cool is this theme?</a></p>
-	 			<p><a href="#">Need a nice good-looking site?</a></p>
-	 			<p><a href="#">Is this theme retina ready?</a></p>
-	 			<p><a href="#">Which version of Font Awesome uses?</a></p>
-	 			<p><a href="#">Free support is integrated?</a></p>
-	 		</div>
-	 		
-	 		<div class="col-lg-3">
-	 			<h4>Latest Posts</h4>
-	 			<div class="hline"></div>
-	 			<p><a href="single-post.html">Our new site is live now.</a></p>
-	 			<p><a href="single-post.html">Retina ready is not an option.</a></p>
-	 			<p><a href="single-post.html">Bootstrap 3 framework is the best.</a></p>
-	 			<p><a href="single-post.html">You need this theme, buy it now.</a></p>
-	 			<p><a href="single-post.html">This theme is what you need.</a></p>
-	 		</div>
-	 		
-	 	</div><! --/row -->
-	 </div><! --/container -->
-	 
-	<!-- *****************************************************************************************************************
-	 TESTIMONIALS
-	 ***************************************************************************************************************** -->
-	 <div id="twrap">
-	 	<div class="container centered">
-	 		<div class="row">
-	 			<div class="col-lg-8 col-lg-offset-2">
-	 			<i class="fa fa-comment-o"></i>
-	 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-	 			<h4><br/>Marcel Newman</h4>
-	 			<p>WEB DESIGNER - BLACKTIE.CO</p>
-	 			</div>
-	 		</div><! --/row -->
-	 	</div><! --/container -->
-	 </div><! --/twrap -->
-	 
+			
 	
-	<!-- *****************************************************************************************************************
-	 FOOTER
-	 ***************************************************************************************************************** -->
-	 <div id="footerwrap">
-	 	<div class="container">
-		 	<div class="row">
-		 		<div class="col-lg-4">
-		 			<h4>About</h4>
-		 			<div class="hline-w"></div>
-		 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-		 		</div>
-		 		<div class="col-lg-4">
-		 			<h4>Social Links</h4>
-		 			<div class="hline-w"></div>
-		 			<p>
-		 				<a href="#"><i class="fa fa-dribbble"></i></a>
-		 				<a href="#"><i class="fa fa-facebook"></i></a>
-		 				<a href="#"><i class="fa fa-twitter"></i></a>
-		 				<a href="#"><i class="fa fa-instagram"></i></a>
-		 				<a href="#"><i class="fa fa-tumblr"></i></a>
-		 			</p>
-		 		</div>
-		 		<div class="col-lg-4">
-		 			<h4>Our Bunker</h4>
-		 			<div class="hline-w"></div>
-		 			<p>
-		 				Some Ave, 987,<br/>
-		 				23890, New York,<br/>
-		 				United States.<br/>
-		 			</p>
-		 		</div>
-		 	
-		 	</div><! --/row -->
-	 	</div><! --/container -->
-	 </div><! --/footerwrap -->
-	 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/retina-1.1.0.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/jquery.hoverdir.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/jquery.hoverx.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/jquery.prettyphoto.js') }}"></script>
-  	<script src="{{ url_for('static', filename='js/jquery.isotope.min.js') }}"></script>
-  	<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+		<!-- section end -->
 
-   <!--AUTO COMPLETE STUFF-->
-   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>-->
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <!--<link rel="stylesheet" href="/resources/demos/style.css">-->
-<!--                   -->
-
-    <script>
-// Portfolio
-(function($) {
-	"use strict";
-	var $container = $('.portfolio'),
-		$items = $container.find('.portfolio-item'),
-		portfolioLayout = 'fitRows';
+		<!-- section start -->
+		<!-- ================ -->
 		
-		if( $container.hasClass('portfolio-centered') ) {
-			portfolioLayout = 'masonry';
-		}
-				
-		$container.isotope({
-			filter: '*',
-			animationEngine: 'best-available',
-			layoutMode: portfolioLayout,
-			animationOptions: {
-			duration: 750,
-			easing: 'linear',
-			queue: false
-		},
-		masonry: {
-		}
-		}, refreshWaypoints());
+		<div class="section clearfix object-non-visible pb-clear bg-image-1" data-animation-effect="fadeIn">
+			<div class="container ">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 id="about" class="title text-center">About <span>Random Walk</span></h1>
+						<p class="lead text-center">Explore scenery you enjoy through the photographs of others.</p>
+						<div class="space"></div>
+						<div class="row">
+							<div class="col-md-6">
+								<img src="static/images/neural_network.gif" style="border-radius: 5px; opacity: 0.8;" alt="Neural Network">
+								<div class="space"></div>
+							</div>
+							<div class="col-md-6">
+								<p>
+									Random Walk allows you to choose or search for a type of scenery and explore areas with photographs that have been identified, through machine learning and image processing, to have similar scenery.
+								</p> 
+								<p>
+									Use the search bar to discover the available scenery classes and bring up markers identified to have the same type of environment on the map. 
+								</p>
+								<p>
+									Or explore and click on the recent Flickr photos to bring up markers to automatically do a map search for that type of scenery. 
+								</p>
+								<p>
+									Use this app to:
+								</p>
+								<ul class="list-unstyled">
+									<li><i class="fa fa-caret-right pr-10 text-colored"></i> Find areas around you to explore in your free time.</li>
+									<li><i class="fa fa-caret-right pr-10 text-colored"></i> Find interesting locations to visit while traveling.</li>
+									<li><i class="fa fa-caret-right pr-10 text-colored"></i> Plan a date or vacation. </li>
+									<li><i class="fa fa-caret-right pr-10 text-colored"></i> Discover new areas to take photos.</li>
+								</ul>
+							</div>
+						</div>
+						<div class="space"></div>
+						<h2>How does it work?</h2>
+						<div class="row">
+							<div class="col-md-6">
+							<p>
+								This app runs by analyzing images in the <a href="http://webscope.sandbox.yahoo.com/catalog.php?datatype=i&did=67">Yahoo Flickr Creative Commons 100 Million</a> photo dataset as well as the most recent photos uploaded by Flickr users. Once the photos are obtained, they are first filtered so that only those with GPS metadata are kept, and then sent off to be classified in terms of scenery.
+							</p>
+							<p>
+								The scenery in each image is classified via a cutting edge deep learning technique utilizing a Convolutional Neural Network that has been trained on 2.5 million images (<a href="http://places.csail.mit.edu/downloadCNN.html">PlacesCNN</a>). The neural network analyzes the pixels in the image and their surrounding pixels to determine important features that are most descriptive of the image's scenery then assigns probabilities to each of 205 scenery classes. 
+							</p>
+							<p>
+								To read more about the inner workings, please see my <a href"http://tjtorres.github.io">blog</a>, or view the code for yourself on <a href="https://github.com/tjtorres/Random-Walk">GitHub</a>.
+							</p>
+							</div>
+							<!--
+							<div class="col-md-6">
+								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingOne">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+													Collapsible Group Item #1
+												</a>
+											</h4>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+												Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher.
+											</div>
+										</div>
+									</div>
+
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingTwo">
+											<h4 class="panel-title">
+												<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+													Collapsible Group Item #2
+												</a>
+											</h4>
+										</div>
+										<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+											<div class="panel-body">
+												Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading" role="tab" id="headingThree">
+											<h4 class="panel-title">
+												<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+													Collapsible Group Item #3
+												</a>
+											</h4>
+										</div>
+										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+											<div class="panel-body">
+												Richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- section end -->
+
+
+
+		<!-- footer start -->
+		<!-- ================ -->
+		<footer id="footer">
+
+			<!-- .footer start -->
+			<!-- ================ -->
+			<div class="footer section">
+				<div class="container">
+					<h1 class="title text-center" id="contact">About <span>Me</span></h1>
+					<div class="space"></div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="footer-content">
+								<p class="large lead text-center">My name is TJ Torres. I recently received my PhD in theoretical high energy physics studying holographic models of cosmic inflation and am now a Data Science Fellow at Insight Data Science.</p>
+								
+								<ul class="social-links text-center">
+									
+									<li class="btn-linkedin linkedin"><a target="_blank" href="https://www.linkedin.com/in/tjtorres"><i class="fa fa-linkedin"></i></a></li>
+									<li class="btn-github github"><a target="_blank" href="https://github.com/tjtorres"><i class="fa fa-github"></i></a></li>
+									
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+			<!-- .footer end -->
+
+			<!-- .subfooter start -->
+			<!-- ================ -->
+			<div class="subfooter">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<p class="text-center">Copyright © 2015 Random Walk by <a target="_blank" href="https://github.com/tjtorres">TJ Torres</a>.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- .subfooter end -->
+
+		</footer>
+		<!-- footer end -->
+
+		<!-- JavaScript files placed at the end of the document so the pages load faster
+		================================================== -->
+		<!-- Jquery and Bootstap core js files -->
+		<script type="text/javascript" src="{{ url_for('static', filename='plugins/jquery.min.js') }}"></script>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
 		
-		function refreshWaypoints() {
-			setTimeout(function() {
-			}, 1000);   
-		}
-				
-		$('nav.portfolio-filter ul a').on('click', function() {
-				var selector = $(this).attr('data-filter');
-				$container.isotope({ filter: selector }, refreshWaypoints());
-				$('nav.portfolio-filter ul a').removeClass('active');
-				$(this).addClass('active');
-				return false;
-		});
+		<script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+
+		<!-- Modernizr javascript -->
+		<script type="text/javascript" src="{{ url_for('static', filename='plugins/modernizr.js') }}"></script>
+
+		<!-- Isotope javascript -->
+		<script type="text/javascript" src="{{ url_for('static', filename='plugins/isotope/isotope.pkgd.min.js') }}"></script>
 		
-		function getColumnNumber() { 
-			var winWidth = $(window).width(), 
-			columnNumber = 1;
+		<!-- Backstretch javascript -->
+		<script type="text/javascript" src="{{ url_for('static', filename='plugins/jquery.backstretch.min.js') }}"></script>
+
+		<!-- Appear javascript -->
+		<script type="text/javascript" src="{{ url_for('static', filename='plugins/jquery.appear.js') }}"></script>
+
+		<!-- Initialization of Plugins -->
+		<script type="text/javascript" src="{{ url_for('static', filename='js/template.js') }}"></script>
+
+		<!-- Custom Scripts -->
+		<script type="text/javascript" src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+		<script type="text/javascript" src="{{ url_for('static', filename='js/autocomplete.js') }}"></script>
+
+		<script type="text/javascript" src="{{ url_for('static', filename='js/typeahead.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/typeahead.jquery.min.js') }}"></script>
+
+		<script type="text/javascript" src="{{ url_for('static', filename='js/search-load.js') }}"></script>
+
+
+
+		<script type="text/javascript" src="{{ url_for('static', filename='js/leaflet.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/leaflet-heat.js') }}"></script>
+
+		<script src="//rawgithub.com/lvoogdt/Leaflet.awesome-markers/2.0/develop/dist/leaflet.awesome-markers.js"></script>
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+   		<script src="//cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+
+   		<script src="{{ url_for('static', filename='js/lazysizes.min.js') }}" async""></script>
 		
-			if (winWidth > 1200) {
-				columnNumber = 5;
-			} else if (winWidth > 950) {
-				columnNumber = 4;
-			} else if (winWidth > 600) {
-				columnNumber = 3;
-			} else if (winWidth > 400) {
-				columnNumber = 2;
-			} else if (winWidth > 250) {
-				columnNumber = 1;
-			}
-				return columnNumber;
-			}       
-			
-			function setColumns() {
-				var winWidth = $(window).width(), 
-				columnNumber = getColumnNumber(), 
-				itemWidth = Math.floor(winWidth / columnNumber);
-				
-				$container.find('.portfolio-item').each(function() { 
-					$(this).css( { 
-					width : itemWidth + 'px' 
-				});
-			});
-		}
+		<script type="text/javascript" src="{{ url_for('static', filename='js/mapper.js') }}"></script>
+
+		<!--<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.justifiedGallery.min.js') }}"></script>-->
+		<script type="text/javascript" src="{{ url_for('static', filename='js/pic-grabber.js') }}"></script>
+
+		<script src="{{ url_for('static', filename='js/dndTree.js') }}"></script>
+
+
+
 		
-		function setPortfolio() { 
-			setColumns();
-			$container.isotope('reLayout');
-		}
-			
-		$container.imagesLoaded(function () { 
-			setPortfolio();
-		});
-		
-		$(window).on('resize', function () { 
-		setPortfolio();          
-	});
-})(jQuery);
-</script>
+	<div class="modal"><!-- Place at bottom of page --></div>
 
-  <div class="modal"><!-- Place at bottom of page --></div>
-  </body>
-
-
-
-   <script>
-
-      $body = $("body");
-
-      $(document).on({
-        ajaxStart: function() { $body.addClass("loading");    },
-        ajaxStop: function() { $body.removeClass("loading"); }    
-      });
-
-      var base_tile = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 18,
-          minZoom: 1,
-          attribution: 'Map data (c) <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-      });
-
-      
-      /*
-      addition of the wms layers
-      */
-
-      
-
-      /*
-      addition of the tile layers
-      */
-      
-
-      /*
-      list of layers to be added
-      */
-      
-
-      /*
-      Bounding box.
-      */
-      var southWest = L.latLng(-90, -180),
-          northEast = L.latLng(90, 180),
-          bounds = L.latLngBounds(southWest, northEast);
-
-      /*
-      Creates the map and adds the selected layers
-      */
-      
-
-
-
-  
-
-      var map = L.map('folium_7bc794bc66c440279ca6134ee64ec228', {
-                                       center:[37.863372, -122.156245],
-                                       zoom: 7,
-                                       maxBounds: bounds,
-                                       layers: [base_tile]
-                                     });
-
-      var heat = L.heatLayer([], {maxZoom: 7, radius: 20, blur: 40});
-      heat.addTo(map);
-
-      var baseLayer = {
-        "Base Layer": base_tile
-      };
-
-
-      var layer_list = { "heatmap" : heat
-      
-      };
-
-      var control = L.control.layers(baseLayer, layer_list);
-      control.addTo(map);
-      //L.control.layers(heatmapLayer, layer_list).addTo(map);
-
-      //cluster group
-      //var clusteredmarkers = L.markerClusterGroup();
-      //section for adding clustered markers
-      
-      //add the clustered markers to the group anyway
-
-      //map.addLayer(clusteredmarkers);
-      /*
-      var marker_1_icon = L.AwesomeMarkers.icon({ icon: 'info-sign',markerColor: 'blue',prefix: 'glyphicon',extraClasses: 'fa-rotate-0'});
-      var marker_1 = L.marker([32.796149, 
-              -117.25974],
-              {'icon':marker_1_icon}
-              );
-      marker_1.bindPopup("<a><img src=http://farm4.staticflickr.com/3096/2848868873_0187db5fd6.jpg></img><BR>ocean</a>");
-      marker_1._popup.options.maxWidth = 300;
-      map.addLayer(marker_1)
-      */
-      
-   
-
-      var plotlayers=[];
-      var markers = new L.markerClusterGroup(); //L.FeatureGroup();
-
-   		$("#type").submit(function(event){
-        event.preventDefault();
-        var query = $("#categories").val();
-   			$.get('/category/'+ query, function(jd) {
-
-          
-          markers.clearLayers();
-          heat.setLatLngs([]);
-
-          //var arr = $.map(jd, function(el) { return el; });
-          /*var heat = L.heatLayer(arr,{
-            radius: 20,
-            blur: 15, 
-            maxZoom: 17,
-        }).addTo(map);
-*/
-          var j=0;
-          for (i=0; i<jd.points.length; i++){
-            var point = jd.points[i];
-            var divNode = document.createElement('DIV');
-            divNode.innerHTML = "<a href="+point.url+ " target='_blank'><img src="+ point.url+" width=300 height=70%></img></a><BR>"+point.scene1+"<BR>"+point.sval1;
-            
-            var marker = L.marker([point.lat,point.lon])
-            marker.bindPopup(divNode);
-            markers.addLayer(marker);
-            var latlng = L.latLng(point.lat,point.lon, 100*point.sval1);
-            heat.addLatLng(latlng);
-          };
-
-          map.addLayer(markers);
-
-            
-
-        
-          control.addOverlay(markers, query );   
-
-        });
-   		
-   		});
-
-
-
-
-      
-
-      
-
-
-
-   </script>
-
-   
-
+	</body>
 </html>

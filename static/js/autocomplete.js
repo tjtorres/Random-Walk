@@ -1,5 +1,4 @@
 
- $(document).ready(function() {
  var availableTags = ['abbey',
  'airport_terminal',
  'alley',
@@ -205,8 +204,4 @@
  'wind_farm',
  'windmill',
  'yard'];
-    $( "#categories" ).autocomplete({
-      source: availableTags
-    });
-  });
 

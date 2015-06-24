@@ -1,12 +1,8 @@
-(function($) {
-
-// prettyPhoto
-	jQuery(document).ready(function(){
-		jQuery('a[data-gal]').each(function() {
-			jQuery(this).attr('rel', jQuery(this).data('gal'));
-		});  	
-		jQuery("a[data-rel^='prettyPhoto']").prettyPhoto({animationSpeed:'slow',theme:'light_square',slideshow:false,overlay_gallery: false,social_tools:false,deeplinking:false});
-	}); 
-
-		
-})(jQuery);
+/* Theme Name: Worthy - Free Powerful Theme by HtmlCoder
+ * Author:HtmlCoder
+ * Author URI:http://www.htmlcoder.me
+ * Version:1.0.0
+ * Created:November 2014
+ * License: Creative Commons Attribution 3.0 License (https://creativecommons.org/licenses/by/3.0/)
+ * File Description: Place here your custom scripts
+ */
